@@ -50,6 +50,7 @@ gulp.task('clean', cb => {
 
 gulp.task('browserSync', () => {
   browserSync({
+    open: false,
     server: {
       baseDir: './'
     }
