@@ -3,18 +3,25 @@ import { render } from 'react-dom';
 import { Router, Route, useRouterHistory } from 'react-router';
 import App from './components/App';
 import PoweredBy from './components/Powered-by';
-import About from './components/About';
 import createHistory from 'history/lib/createHashHistory';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import todoApp from './reducers';
+import TodoApp from './components/TodoApp';
 
 const appHistory = useRouterHistory(createHistory)({ queryKey: false });
 
 window.React = React;
 
+let store = createStore(todoApp);
+
 render(
-  (<Router history={appHistory}>
-    <Route path="/" component={App}>
-      <Route path="/about" component={About} />
-      <Route path="/poweredby" component={PoweredBy} />
-    </Route>
-  </Router>), document.getElementById('content')
+  (<Provider store={store}>
+    <Router history={appHistory}>
+      <Route path="/" component={App}>
+        <Route path="/todo" component={TodoApp} />
+        <Route path="/converter" component={PoweredBy} />
+      </Route>
+    </Router>
+  </Provider>), document.getElementById('content')
 );
