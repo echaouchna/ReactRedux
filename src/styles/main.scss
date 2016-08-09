@@ -11,7 +11,7 @@ body {
 
 header {
   color: #fff;
-  background: #0066bb url(../images/reactjs.png) no-repeat right 10px;
+  background: #4296db;
   background-size: contain;
   h1 {
     display: inline-block;
@@ -26,7 +26,7 @@ header {
     border-radius: 3px;
     &.active,
     &:hover {
-      background-color: #0085F3;
+      background-color: #6eb1e8;
     }
   }
 }
