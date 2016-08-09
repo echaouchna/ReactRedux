@@ -11,7 +11,7 @@ class App extends React.Component {
           <Link to="/converter">Roman Converter</Link>
         </header>
         <section>
-          {this.props.children || 'Welcome to React Starterify'}
+          {this.props.children || 'Welcome to React Redux POC'}
         </section>
       </div>
     );

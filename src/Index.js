@@ -13,7 +13,7 @@ const appHistory = useRouterHistory(createHistory)({ queryKey: false });
 
 window.React = React;
 
-let store = createStore(todoApp);
+let store = createStore(todoApp, window.devToolsExtension && window.devToolsExtension());
 
 render(
   (<Provider store={store}>
